@@ -1,61 +1,3 @@
-<html>
-<head>
-    <style>
-        #title {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            margin: 50px;
-	    font-size: 36px;
-        }
-
-        .text-container {
-            display: inline-block;
-            font-size: 24px;
-            background-color: #eee;
-            padding: 5px;
-            border-radius: 5px;
-            text-align: center;
-            margin: 0 auto;
-       }
-
-        .letter {
-            font-family: Arial, sans-serif;
-            display: inline-block;
-            background-color: #3498db;
-            color: #fff;
-            padding: 5px;
-            margin: 2px;
-            border-radius: 3px;
-	    width: 100px;
-	    font-size: 100px;
-             text-align: center;
-       }
-
-
-
-
-    </style>
-</head>
-<body>
-<h1 id="title">Countdown</h1>
-
-
-    <div class="text-container" >
-        <span id="letter0" class="letter"></span>
-        <span id="letter1" class="letter"></span>
-        <span id="letter2" class="letter"></span>
-        <span id="letter3" class="letter"></span>
-        <span id="letter4" class="letter"></span>
-        <span id="letter5" class="letter"></span>
-        <span id="letter6" class="letter"></span>
-        <span id="letter7" class="letter"></span>
-        <span id="letter8" class="letter"></span>
-    </div>
-
-    <script>
-
-        // Array of possible words
-        var wordList = [
 "accompany",
 "according",
 "admission",
@@ -191,6 +133,7 @@
 "landscape",
 "lifestyle",
 "literally",
+"long-term",
 "marketing",
 "meanwhile",
 "mechanism",
@@ -245,6 +188,7 @@
 "seriously",
 "similarly",
 "situation",
+"so-called",
 "something",
 "sometimes",
 "somewhere",
@@ -279,48 +223,4 @@
 "virtually",
 "volunteer",
 "wonderful",
-"yesterday"
-];
-
-
-
-// Function to generate a random index and display the corresponding word
-function displayRandomShuffledWord() {
-     var randomIndex = Math.floor(Math.random() * wordList.length);
-     var randomWord = wordList[randomIndex].toUpperCase();
-     
-     var shuffledWord = shuffleString(randomWord);
-
-     document.getElementById("letter0").textContent = shuffledWord[0];
-     document.getElementById("letter1").textContent = shuffledWord[1];
-     document.getElementById("letter2").textContent = shuffledWord[2];
-     document.getElementById("letter3").textContent = shuffledWord[3];
-     document.getElementById("letter4").textContent = shuffledWord[4];
-     document.getElementById("letter5").textContent = shuffledWord[5];
-     document.getElementById("letter6").textContent = shuffledWord[6];
-     document.getElementById("letter7").textContent = shuffledWord[7];
-     document.getElementById("letter8").textContent = shuffledWord[8];
-
-}
-
-function shuffleString(inputString) {
-    // Convert the string to an array of characters
-    let characters = inputString.split('');
-
-    // Perform Fisher-Yates Shuffle
-    for (let i = characters.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [characters[i], characters[j]] = [characters[j], characters[i]];
-    }
-
-    // Convert the array back to a string
-    return characters.join('');
-}
-
-        // Call the function initially to display a random word on page load
-        displayRandomShuffledWord();
-
-    </script>
-
-</body>
-</html>
+"yesterday",

@@ -1,0 +1,115 @@
+<html>
+<body>
+<h1>Countdown</h1>
+
+<p id="randomWord"></p>
+
+    <script>
+        // Array of possible words
+        var wordList = [
+"Abandoned",
+"Abdominal",
+"Abduction",
+"Abolished",
+"Absentees",
+"Abstained",
+"Abundance",
+"Acclaimed",
+"Accenting",
+"Accessory",
+"Accidents",
+"Acclaimed",
+"Achieving",
+"Adaptable",
+"Addictive",
+"Adjective",
+"Adjourned",
+"Adoptable",
+"Adornment",
+"Adulthood",
+"Adventure",
+"Adversary",
+"Adversity",
+"Aesthetic",
+"Affection",
+"Afflicted",
+"Afternoon",
+"Aggregate",
+"Agitation",
+"Alcoholic",
+"Alighting",
+"Allegedly",
+"Alligator",
+"Allocated",
+"Allotment",
+"Ambitious",
+"Ambulance",
+"Amendment",
+"Amplified",
+"Anchorage",
+"Anciently",
+"Announced",
+"Announcer",
+"Anonymous",
+"Answering",
+"Apartment",
+"Appalling",
+"Appearing",
+"Appellant",
+"Appertain",
+"Appeasing",
+"Appointed",
+"Apprehend",
+"Arachnoid",
+"Arboretum",
+"Armistice",
+"Ascendant",
+"Ascension",
+"Ascertain",
+"Ascribing",
+"Assertion",
+"Associate",
+"Attendant",
+"Attention",
+"Attitudes",
+"Audacious",
+"Auricular",
+"Austerein",
+"Austerity",
+"Authentic",
+"Authority",
+"Available",
+"Awkwardly",
+"Backaches",
+"Balefully",
+"Ballerina"
+];
+
+// Function to generate a random index and display the corresponding word
+function displayRandomWord() {
+     var randomIndex = Math.floor(Math.random() * wordList.length);
+     var randomWord = wordList[randomIndex];
+     var shuffledWord = shuffleString(randomWord);
+     document.getElementById("randomWord").textContent = shuffledWord;
+}
+
+function shuffleString(inputString) {
+    // Convert the string to an array of characters
+    let characters = inputString.split('');
+
+    // Perform Fisher-Yates Shuffle
+    for (let i = characters.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [characters[i], characters[j]] = [characters[j], characters[i]];
+    }
+
+    // Convert the array back to a string
+    return characters.join('');
+}
+
+        // Call the function initially to display a random word on page load
+        displayRandomWord();
+    </script>
+
+</body>
+</html>
